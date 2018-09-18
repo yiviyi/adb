@@ -130,8 +130,9 @@ logcat ..
 
 ### Fiddler
 > 通过fiddler来模拟限速，因为fiddler本来就是个代理，它提供了客户端请求前和服务器响应前的回调接口，我们可以在这些接口里 面自定义一些逻辑。Fiddler的模拟限速正是在客户端请求前来自定义限速的逻辑，此逻辑是通过延迟发送数据或接收的数据的时间来限制网络的下载速度和 上传速度，从而达到限速的效果。
-
-
+![pic](fiddler1.png)
+![pic](fiddler2.png)
+![pic](fiddler3.png)
 ```
 1.Hide Image Requests---隐藏图片请求
 
@@ -175,6 +176,7 @@ logcat ..
 
 
 ### Hawk
+![pic](hawk.png)
 Initialize
 
 ```
@@ -388,7 +390,7 @@ $ adb shell am get-inactive <packageName>
 ##### Data
 >传递给Worker的持久化的键值对。
 
-
+![pic](workmanager_flow.png)
 
 ##### for example 
 ##### 创建Worker
@@ -463,6 +465,7 @@ graph LR
 A-->B
 B-->C
 ```
+![pic](abc.png)
 
 ```
 WorkManager.getInstance().beginWith(A).then(B).then(C).enqueue();
@@ -476,6 +479,7 @@ graph LR
 A-->C
 B-->C
 ```
+![pic](abc1.png)
 ```
 WorkManager.getInstance().beginWith(A,B).then(C).enqueue();
 ```
@@ -490,7 +494,7 @@ C-->D
 B-->E
 D-->E
 ```
-
+![pic](abcde.png)
 ```
 val workContinuation1 = WorkManager.getInstance().beginWith(A).then(B)
 val workContinuation2 = WorkManager.getInstance().beginWith(C).then(D)
