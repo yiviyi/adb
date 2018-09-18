@@ -251,6 +251,7 @@ Android系统引入了OOM Killer 来解决内存资源被耗尽的问题，。OO
 
 系统会定期退出低电耗模式一会儿，好让应用完成其已推迟的 Activity。在此维护时段内，系统会运行所有待定同步、作业和闹铃并允许应用访问网络。
 
+![思维导图](doze.png)
 
 > 2018年8月: 所有新开发应用的target API level必须是26(Android 8.0)甚至更高。
 
@@ -479,7 +480,7 @@ graph LR
 A-->C
 B-->C
 ```
-![pic](abc1.png)
+![pic](abc2.png)
 ```
 WorkManager.getInstance().beginWith(A,B).then(C).enqueue();
 ```
